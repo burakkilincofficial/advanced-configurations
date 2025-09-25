@@ -3,12 +3,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-  kafka:
-    bootstrap-servers: localhost:9094
-  datasource:
-    url: "jdbc:postgresql://localhost:5435/catalog-service"
-    username: postgres
-    password: test
   cloud:
     function:
       definition: orderCreatedConsumerFunction
@@ -29,17 +23,8 @@ spring:
             consumer:
               enable-dlq: true
               dlq-name: order-events.DLQ.catalog-service
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8003/realms/turkcell-ecommerce-dev
-  data:
-    redis:
-      uri: redis://localhost:6379
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+

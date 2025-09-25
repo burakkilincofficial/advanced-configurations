@@ -1,0 +1,19 @@
+spring:
+  kafka:
+    bootstrap-servers: 10.104.0.24:9094
+  datasource:
+    url: "jdbc:postgresql://10.104.0.24:5435/catalog-service"
+    username: postgres
+    password: test
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://keycloak.turkcell.com.tr/realms/turkcell-ecommerce-prod
+  data:
+    redis:
+      uri: redis://10.104.0.24:6379
+eureka:
+  client:
+    service-url:
+      defaultZone: https://service.registry.turkcell.com.tr/eureka/
