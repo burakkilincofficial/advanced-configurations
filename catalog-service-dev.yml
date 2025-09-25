@@ -3,8 +3,6 @@ spring:
     bootstrap-servers: localhost:9094
   datasource:
     url: "jdbc:postgresql://localhost:5435/catalog-service"
-    username: postgres
-    password: test
   security:
     oauth2:
       resourceserver:
